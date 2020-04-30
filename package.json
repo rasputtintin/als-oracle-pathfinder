@@ -1,45 +1,49 @@
 {
-    "name": "als-oracle-pathfinder",
-    "description": "An Account Lookup Service Oracle using GSMA PathFinder for resolution of MSISDNs",
-    "version": "8.7.1",
-    "author": "Matt Kingston <matt.kingston@modusbox.com>",
-    "contributors": [],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/mojaloop/als-oracle-pathfinder.git"
-    },
-    "bugs": "http://github.com/mojaloop/als-oracle-pathfinder/issues",
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org"
-    },
-    "dependencies": {
-        "@hapi/boom": "^7.1.1",
-        "@hapi/hapi": "^17.0.0",
-        "@lib/pathfinder": "file:src/lib/pathfinder",
-        "@mojaloop/central-services-logger": "8.6.0",
-        "@mojaloop/central-services-shared": "8.7.1",
-        "@mojaloop/forensic-logging-client": "8.3.0",
-        "dotenv": "^8.0.0",
-        "hapi-openapi": "^1.0.0",
-        "knex": "^0.19.5",
-        "mysql2": "^1.6.5"
-    },
-    "devDependencies": {
-        "ava": "^1.4.1",
-        "eslint": "5.6.1",
-        "swagmock": "1.0.0"
-    },
-    "scripts": {
-        "build": "docker build -t als-oracle-pathfinder -f ./Dockerfile .",
-        "lint": "eslint .",
-        "regenerate": "yo swaggerize:test --framework hapi --apiPath './src/swagger.json'",
-        "start": "node ./src/index",
-        "test": "ava ./test",
-        "test:pathfinder": "ava ./src/lib/pathfinder/tests/",
-        "audit:resolve": "SHELL=sh resolve-audit",
-        "audit:check": "SHELL=sh check-audit"
-    },
-    "generator-swaggerize": {
-        "version": "4.1.0"
-    }
+  "name": "als-oracle-pathfinder",
+  "description": "An Account Lookup Service Oracle using GSMA PathFinder for resolution of MSISDNs",
+  "version": "8.7.1",
+  "author": "Matt Kingston <matt.kingston@modusbox.com>",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mojaloop/als-oracle-pathfinder.git"
+  },
+  "bugs": "http://github.com/mojaloop/als-oracle-pathfinder/issues",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@hapi/boom": "^7.1.1",
+    "@hapi/hapi": "^18.3.2",
+    "@lib/pathfinder": "file:src/lib/pathfinder",
+    "@mojaloop/central-services-logger": "8.6.0",
+    "@mojaloop/central-services-shared": "8.7.1",
+    "@mojaloop/forensic-logging-client": "8.3.0",
+    "dotenv": "^8.0.0",
+    "hapi-openapi": "^1.0.0",
+    "knex": "^0.19.5",
+    "mysql2": "^1.6.5",
+    "snyk": "^1.316.1"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "eslint": "5.6.1",
+    "swagmock": "1.0.0"
+  },
+  "scripts": {
+    "build": "docker build -t als-oracle-pathfinder -f ./Dockerfile .",
+    "lint": "eslint .",
+    "regenerate": "yo swaggerize:test --framework hapi --apiPath './src/swagger.json'",
+    "start": "node ./src/index",
+    "test": "ava ./test",
+    "test:pathfinder": "ava ./src/lib/pathfinder/tests/",
+    "audit:resolve": "SHELL=sh resolve-audit",
+    "audit:check": "SHELL=sh check-audit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "generator-swaggerize": {
+    "version": "4.1.0"
+  },
+  "snyk": true
 }
