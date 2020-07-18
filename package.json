@@ -14,13 +14,13 @@
     },
     "dependencies": {
         "@hapi/boom": "^7.1.1",
-        "@hapi/hapi": "^17.0.0",
+        "@hapi/hapi": "^18.3.2",
         "@lib/pathfinder": "file:src/lib/pathfinder",
         "@mojaloop/central-services-logger": "8.6.0",
         "@mojaloop/central-services-shared": "8.7.1",
         "@mojaloop/forensic-logging-client": "8.3.0",
         "dotenv": "^8.0.0",
-        "hapi-openapi": "^1.0.0",
+        "hapi-openapi": "^2.0.2",
         "knex": "^0.19.5",
         "mysql2": "^1.6.5"
     },
